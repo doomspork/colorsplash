@@ -55,10 +55,8 @@ class Swatch extends Component {
   render() {
     return (
       <div className="card" style={this.props.style()}>
-        <div className="card-content color-box">
-
-        </div>
-        <div className="card-content" style={{fontSize: "1.8rem", fontFamily: "'Rajdhani', sans-serif", fontWeight: "700", backgroundColor: "#fff"}}>
+        <div className="card-content color-box"></div>
+        <div className="card-content color-info" style={{backgroundColor: "#fff"}}>
           {this.props.children}
         </div>
         <footer className="card-footer">
