@@ -1,21 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:700|Source+Sans+Pro:300,400");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:700|Nunito:300,400");
 
 body {
   background-color: #f5f6f7;
   overflow: hidden;
-  font-family: 'Source Sans Pro', sans-serif !important;
+  font-family: 'Nunito', sans-serif !important;
 }
 
 body.darkness{
   background-color: #1D2124;
-}
-
-nav {
-  padding: 12px 0px 0px 12px;
-}
-
-body.darkness .moon {
-  color: #f5f6f7;
 }
 
 body.darkness .content {
@@ -30,6 +22,14 @@ body.darkness a:hover {
   color: #4B67FC;
 }
 
+body .moon {
+  color: rgba(0,0,0,.6);
+}
+
+body.darkness .moon {
+  color: rgba(255,255,255,.6);
+}
+
 .card {
   box-shadow: 5px 10px 18px rgba(0,0,0,.25) !important;
   border-radius: 15px;
@@ -40,14 +40,26 @@ body.darkness .card {
   box-shadow: 5px 10px 18px rgba(0,0,0,.75) !important;
 }
 
-.hero-body {
-  padding: 0px !important;
-
-}
-
 .tabs a {
   font-weight: 300;
+  color: rgba(0,0,0,.6);
 }
+
+.tabs li.is-active a{
+  font-weight: 400;
+  color: rgba(0,0,0,.6) !important;
+  border-bottom: 2px solid #3273dc !important;
+}
+
+body.darkness .tabs a {
+  color: rgba(255,255,255,.6) !important;
+}
+
+body.darkness .tabs li.is-active a{
+  color: rgba(255,255,255,.6);
+  border-bottom: 2px solid #4B67FC !important;
+}
+
 
 .card-footer {
   background-color: #fff;

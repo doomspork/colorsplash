@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faClipboard, faStepBackward, faSyncAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faClipboard, faMoon, faStepBackward, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 
 class Swatch extends Component {
   state = {
     copying: false,
     current: null,
+    darkness: false,
     previous: [],
   }
 
@@ -48,6 +49,15 @@ class Swatch extends Component {
     return value;
   }
 
+  toggleDarkness = () => {
+    const darkness = document.body.classList.value.includes("darkness");
+    if (darkness) {
+      document.body.classList.remove("darkness");
+    } else {
+      document.body.classList.add("darkness");
+    }
+  }
+
   componentWillMount() {
     this.onGenerate();
   }
@@ -55,7 +65,9 @@ class Swatch extends Component {
   render() {
     return (
       <div className="card" style={this.props.style()}>
-        <div className="card-content color-box"></div>
+        <div className="card-content color-box">
+          <FontAwesomeIcon className="moon" icon={faMoon} onClick={this.toggleDarkness} style={{cursor: "pointer"}} />
+        </div>
         <div className="card-content color-info" style={{backgroundColor: "#fff"}}>
           {this.props.children}
         </div>
